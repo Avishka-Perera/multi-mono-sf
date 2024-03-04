@@ -256,6 +256,8 @@ class CheckpointSaver:
 
         # Save
         save_dict = dict(stats_dict)
+        if isinstance(model_and_loss._model, torch.nn.DataParallel):
+            model_and_loss._model = model_and_loss._model.module
         save_dict[self._model_key] = model_and_loss.state_dict()
         save_dict[self._optimizer_key] = optimizer.state_dict()
         save_dict[self._scheduler_key] = scheduler.state_dict()
