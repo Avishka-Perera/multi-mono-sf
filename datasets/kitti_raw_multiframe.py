@@ -48,7 +48,7 @@ class KITTI_Raw_Multi(data.Dataset):
         scene_list = [line.rstrip() for line in index_file.readlines()]
         view1 = 'image_02'
         view2 = 'image_03'
-        ext = '.jpg'
+        ext = '.png'
 
         ## Lists
         for scene in scene_list:

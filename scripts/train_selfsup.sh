@@ -2,8 +2,8 @@
 
 
 # experiments and datasets meta
-DATA_HOME="(KITTI Raw dataset path)"
-EXPERIMENTS_HOME="(Path where checkpoints and log files will be saved)"
+DATA_HOME="data/KITTI"
+EXPERIMENTS_HOME="eval"
 
 # model
 MODEL=MonoSceneFlow_Multi
@@ -12,7 +12,7 @@ MODEL=MonoSceneFlow_Multi
 ALIAS="-selfsup-"
 TIME=$(date +"%Y%m%d-%H%M%S")
 SAVE_PATH="$EXPERIMENTS_HOME/$MODEL$ALIAS$TIME"
-CHECKPOINT=None
+CHECKPOINT=eval/MonoSceneFlow_Multi-selfsup-20240301-171613
 
 # Loss and Augmentation
 Train_Dataset=KITTI_Raw_Multi_KittiSplit_Train
@@ -29,6 +29,7 @@ python ../main.py \
 --batch_size_val=1 \
 --sequence_length=4 \
 --checkpoint=$CHECKPOINT \
+--checkpoint_mode=resume_from_latest \
 --lr_scheduler=MultiStepLR \
 --lr_scheduler_gamma=0.5 \
 --lr_scheduler_milestones="[23, 39, 47, 54]" \
