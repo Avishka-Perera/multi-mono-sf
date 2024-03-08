@@ -5,11 +5,12 @@ name: multi-mono-sf
 channels:
     - pytorch
     - conda-forge
+    - defaults
 dependencies:
     - python=3.8
     - pytorch==1.8.1
-    - torchvision
-    - torchaudio
+    - torchvision==0.9.1
+    - pocl
     - cudatoolkit=10.1
     - opencv
     - colorama
@@ -18,3 +19,4 @@ dependencies:
     - pytz
     - tqdm==4.40.0
     - tensorboard
+    - matplotlib
