@@ -8,15 +8,17 @@ channels:
     - defaults
 dependencies:
     - python=3.8
-    - pytorch==1.8.1
-    - torchvision==0.9.1
+    - cudatoolkit=11.3
     - pocl
-    - cudatoolkit=10.1
-    - opencv
-    - colorama
-    - scikit-image
-    - cupy
-    - pytz
-    - tqdm==4.40.0
-    - tensorboard
-    - matplotlib
+    - pip
+    - pip:
+          - torch==1.8.1
+          - torchvision==0.9.1
+          - opencv-python
+          - colorama
+          - scikit-image
+          - cupy-cuda11x
+          - pytz
+          - tqdm==4.40.0
+          - tensorboard
+          - matplotlib
