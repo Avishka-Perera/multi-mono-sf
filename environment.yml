@@ -8,12 +8,11 @@ channels:
     - defaults
 dependencies:
     - python=3.8
-    - cudatoolkit=11.3
-    - pocl
+    - cudatoolkit-dev=11.3
+    - pytorch=1.8.1
+    - torchvision=0.9.1
     - pip
     - pip:
-          - torch==1.8.1
-          - torchvision==0.9.1
           - opencv-python
           - colorama
           - scikit-image
